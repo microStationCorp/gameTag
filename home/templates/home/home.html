@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Name Generator</title>
+    <style>
+        .myShadow {
+            box-shadow: 1px 1px 50px rgba(47, 53, 53, 0.212);
+        }
+
+        .myBrd {
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <h3 class="myBrd">GameTag</h3>
+            </a>
+        </nav>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body myShadow">
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <div class="row justify-content-center">
+                        <div class="input-group my-3 col-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Preffix</span>
+                            </div>
+                            <input type="text" name="pre" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="input-group my-3 col-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Suffix</span>
+                            </div>
+                            <input type="text" name="suf" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-outline-secondary"
+                            style="min-width: 100px;">Generate</button>
+                    </div>
+                </form>
+                <div class="text-center my-4">
+                    <h3>{{gen}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
